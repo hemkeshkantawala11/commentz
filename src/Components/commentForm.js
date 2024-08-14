@@ -1,7 +1,8 @@
+// src/components/CommentForm.js
 import React, { useState } from 'react';
 import useStore from '../store';
 
-const CommentForm = ({ parentId = null }) => {
+const CommentForm = ({ parentId = null, onCancel }) => {
     const [name, setName] = useState('');
     const [text, setText] = useState('');
     const addComment = useStore(state => state.addComment);
@@ -15,11 +16,12 @@ const CommentForm = ({ parentId = null }) => {
             name,
             text,
             date: new Date().toISOString(),
-            parentId,
+            parentId,  // Indicates if it's a reply
         };
         addComment(newComment);
         setName('');
         setText('');
+        if (onCancel) onCancel();
     };
 
     return (
@@ -35,7 +37,8 @@ const CommentForm = ({ parentId = null }) => {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
-            <button type="submit">Add Comment</button>
+            <button type="submit">Add {parentId ? 'Reply' : 'Comment'}</button>
+            {onCancel && <button type="button" onClick={onCancel}>Cancel</button>}
         </form>
     );
 };

@@ -12,9 +12,8 @@ const CommentList = ({ parentId = null }) => {
                 .filter(comment => comment.parentId === parentId)
                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                 .map(comment => (
-                    <div key={comment.id}>
+                    <div key={comment.id} className="comment-item">
                         <Comment comment={comment} />
-                        <CommentList parentId={comment.id} />
                     </div>
                 ))}
         </div>

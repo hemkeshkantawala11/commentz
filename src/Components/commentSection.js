@@ -6,7 +6,7 @@ import CommentList from './commentList';
 const CommentSection = () => {
     return (
         <div className="comment-section">
-            <h2>Comments</h2>
+            <h2>Commentz</h2>
             <CommentForm />
             <CommentList />
         </div>

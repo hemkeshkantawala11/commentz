@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Comment System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I have built a simple comment system using with React, allowing users to add, edit, delete, and reply to comments.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Add new comments
+- Edit existing comments
+- Delete comments
+- Reply to comments
+- Nested comment structure
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- JavaScript
+- React
+- npm
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+src/
+├── components/
+│   ├── Comment.js
+│   ├── CommentForm.js
+│   ├── CommentList.js
+│   └── CommentSection.js
+├── store/
+│   └── index.js
+└── App.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/comment-system.git
+    cd comment-system
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+    ```sh
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the development server:
+    ```sh
+    npm start
+    ```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Open your browser and navigate to `http://localhost:3000`.
+- Add a new comment using the form at the top.
+- Edit or delete existing comments using the respective buttons.
+- Reply to a comment by clicking the "Reply" button.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `CommentSection`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The main component that renders the comment form and the list of comments.
 
-## Learn More
+### `CommentForm`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A form component for adding new comments or replies.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `CommentList`
 
-### Code Splitting
+A component that renders a list of comments, supporting nested replies.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### `Comment`
 
-### Analyzing the Bundle Size
+A component that represents a single comment, with options to edit, delete, and reply.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## State Management
 
-### Making a Progressive Web App
+In the project I have used a custom store for state management called zustand, located in `src/store.js`. The store handles the following actions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- `addComment`: Adds a new comment to the state.
+- `updateComment`: Updates an existing comment.
+- `deleteComment`: Deletes a comment.
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
